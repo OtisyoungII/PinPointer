@@ -8,8 +8,35 @@
 import UIKit
 import SpriteKit
 
-class GamesViewController: UIViewController {
 
+
+
+
+
+
+
+class GamesViewController: UIViewController {
+    
+    
+    
+    @IBAction func startinggame(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondController = storyboard.instantiateViewController(withIdentifier: "second_controller")
+        self.present(secondController, animated: true, completion: nil)
+    }
+    
+    
+    
+//    @IBAction func DidStartGame(_ sender: Any) {
+//    }
+    
+@IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
+    let backdropImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "backdrop"))
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
 
